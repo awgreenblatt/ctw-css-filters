@@ -19,6 +19,7 @@
 
 		<link rel="stylesheet" href="css/dissolve.css">
 		<link rel="stylesheet" href="css/burn.css">
+		<link rel="stylesheet" href="css/curtains.css">
 		<link rel="stylesheet" href="css/tile-flip.css">
 
 		<!-- For syntax highlighting -->
@@ -49,20 +50,6 @@
 				<section>
 					<h1>CSS Shaders</h1>
 					<h3>Cinematic Effects for the Web</h3>
-					<p>
-						Alan Greenblatt<br/>
-						blattchat.com<br/>
-						@agreenblatt<br/>
-					<p style="display:none">
-						Slide Transition Method:<br>
-						<a id="cube" href="index.html?transition=cube">Cube</a> -
-						<a id="page" href="index.html?transition=page">Page</a> -
-						<a id="concave" href="index.html?transition=concave">Concave</a> -
-						<a id="linear" href="index.html?transition=linear">Linear (default)</a> -
-						<a id="dissolve" href="index.html?transition=dissolve">Dissolve</a> -
-						<a id="burn" href="index.html?transition=burn">Burn</a> -
-						<a id="tileflip" href="index.html?transition=tileflip">Tile Flip</a>
-					</p>
 				</section>
 
 				<section>
@@ -71,63 +58,52 @@
 
 				<section>
 					<H2>Filter Effects</h2>
-					<a target="_blank" href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html</a>
+					<img id="filterspec" src="assets/filterspec.png">
 				</section>
 
 				<section>
 					<h2>CSS Custom Filters/Shaders</h2>
 					<p>Written in OpenGL Shader Language<br/>
-					<a target="_blank" href="http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf">http://www.opengl.org/registry/doc/GLSLangSpec.4.30.6.pdf</a>
+					(same as WebGL)
 				</section>
 
-				<section>
+				<section id="transitions">
+					<div>
 					<h2>This is just CSS markup, so...</h2>
+					<a href="?transition=burn#/transitions">Burn</a>
+					or
+					<a href="?transition=linear#/transitions">Linear</a><br/>
+					</div>
 				</section>
 
 				<section>
 					<h2>Two Kinds of Shaders</h2>
-					<ul>
-						<li>Vertex Shaders</li>
-						<li>Fragment Shaders</li>
-					</ul>
 				</section>
 
 				<section>
-					<h3>Vertex Shaders</h3>
-					<ol>
-						<li>CSS specifies mesh resolution, laid over HTML content</li>
-						<li>Vertex shader called for each mesh vertex</li>
-						<li>Named parameters can be passed into shader</li>
-						<li>Shader calculates new 3D position of each mesh vertex</li>
-						<li>Calculated varyings can be passed to fragment shader</li>
-					</ol>
+					<h2>Vertex Shaders</h2>
+					<h3>3D Transformations</h3>
 				</section>
 
 				<section>
-					<h3>Animating a CSS Shader</h3>
-					<p>Mouse over the tree...</p>
+					<h3>Vertex Shader Animation</h3>
 					<div class="crop">
 						<p>
-						<img src="tree.jpg"/>
+						<img src="assets/tree.jpg"/>
 						</p>
 					</div>
 					<div style="font-size: small">Photo courtesy of freefoto.com</div>
 				</section>
 
 				<section>
-					<h3>Fragment Shaders</h3>
-					<ol>
-						<li>CSS specifies named parameters, blend mode and compositing method</li>
-						<li>Varyingx calculated in vertex shaders passed in as well</li>
-						<li>Fragment shader called for every pixel</li>
-						<li>New color or Mix color is calculated</li>
-					</ol>
+					<h2>Fragment Shaders</h2>
+					<h3>Color Transformations</h3>
 				</section>
 
 				<section>
 					<div id="plasma-content">
-						<h3>Plasma Tree</h3>
-						<img id="plasmatree" src="tree.jpg"/>
+						<h3>Fragment Shader Animation</h3>
+						<img id="plasmatree" src="assets/tree.jpg"/>
 					</div>
 					<p style="font-size:small">Plasma shader adapted from work done by Viktor Korsun</p>
 				</section>
@@ -136,23 +112,12 @@
 					<h3>Combining Vertex & Fragment Shaders</h3>
 					<div>
 						<h4>3D Page Curl With Lighting & Shading</h4>
-						<p>Mouse over the page to start page curl</p>
-						<img id="curltree" src="tree.jpg"/>
+						<img id="curltree" src="assets/tree.jpg"/>
 					</div>
 				</section>
 
 				<section>
 					<h2><a target="_blank" href="http://localhost:8000">CSS FilterLab</a></h2>
-				</section>
-
-				<section>
-					<h2>More Info</h2>
-					<p>http://blattchat.com<br/>
-					http://html.adobe.com
-					</p>
-				</section>
-				<section>
-					<h2>Questions?</h2>
 				</section>
 
 			</div>
@@ -166,7 +131,7 @@
 			</aside>
 
 			<aside class="footer">
-				<a href="http://blattchat.com">blattchat.com</a>
+				Create the Web
 			</aside>
 
 			<!-- Presentation progress bar -->
@@ -183,8 +148,9 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			var trans = Reveal.getQueryHash().transition || 'linear'; // default/cube/page/concave/linear(2d)/dissolve/burn
-			var transLink = document.querySelector('#' + trans);
+/*			var transLink = document.querySelector('#' + trans);
 			transLink.style.color = "#ff0000";
+			*/
 
 			Reveal.initialize({
 				controls: true,

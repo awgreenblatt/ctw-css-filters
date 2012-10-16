@@ -1,0 +1,72 @@
+/*********************************************
+ * CURTAINS TRANSITION
+ *********************************************/
+
+	.reveal.curtains .slides>section.present {
+		display: block;
+
+		-webkit-transition-delay: 2s;
+		-webkit-transform: none;
+		-webkit-filter: custom(url(shaders/vertex/curtains.vs) mix(url(shaders/fragment/curtains.fs) multiply source-atop), 80 80 border-box, transform perspective(2000) scale(1.0) rotateX(0deg) rotateY(0deg) rotateZ(0deg), numFolds 4, foldSize 3, amount 0.0); 
+			 
+		-webkit-transition-duration: 2s;
+	}
+
+	.reveal.curtains .slides {
+		margin-top: -350px;
+
+	}
+
+	.reveal.curtains .slides section {
+		padding: 30px;
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	}
+
+	.reveal.curtains .slides section:not(.stack):before {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		background: rgba(0,0,0,0.2);
+	}
+
+	.reveal.curtains .slides section:not(.stack):after {
+		content: '';
+		position: absolute;
+		display: block;
+		width: 90%;
+		height: 30px;
+		left: 5%;
+		bottom: 0;
+		background: none;
+
+		border-radius: 4px;
+		box-shadow: 0px 95px 25px rgba(0,0,0,0.2);
+	}
+
+	.reveal.curtains .slides>section.stack {
+		padding: 0;
+		background: none;
+	}
+
+	.reveal.curtains .slides>section.past {
+		-webkit-transform: none;
+		
+
+		-webkit-filter: custom(url(shaders/vertex/curtains.vs) mix(url(shaders/fragment/curtains.fs) multiply source-atop), 80 80 border-box, transform perspective(2000) scale(1.0) rotateX(0deg) rotateY(0deg) rotateZ(0deg), numFolds 4, foldSize 3, amount 1.0); 
+
+			-webkit-transition-duration: 2s;
+	}
+
+	.reveal.curtains .slides>section.future {
+		-webkit-transform: none;
+			-webkit-transition-duration: 2s;
+		-webkit-filter: custom(url(shaders/vertex/curtains.vs) mix(url(shaders/fragment/curtains.fs) multiply source-atop), 80 80 border-box, transform perspective(2000) scale(1.0) rotateX(0deg) rotateY(0deg) rotateZ(0deg), numFolds 4, foldSize 3, amount 1.0); 
+
+	}
