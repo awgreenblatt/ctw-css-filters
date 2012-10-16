@@ -78,12 +78,16 @@ You can also type garbage in to show real-time error handling
 
 10. Go to the fragment shader.  The last line reads:
 
+<code>
 css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
+</code>
 
 Select that and paste over it:
 
+<code>
 //	css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
-    css_MixColor = isVisible ? vec4(1.0) : vec4(1.0, 0.0, 0.0, 1.0);
+css_MixColor = isVisible ? vec4(1.0) : vec4(1.0, 0.0, 0.0, 1.0);
+</code>
 
 If the dissolve filter thinks something should be visible, mix it with white.  Otherwise, mix it with red. very simple.
 
