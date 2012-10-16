@@ -111,12 +111,16 @@ body {
 }
 
 #filterspec {
-	width: 70%;
+	width: 80%;
 	transform:rotate(5deg);
 	-ms-transform:rotate(5deg); /* IE 9 */
 	-moz-transform:rotate(5deg); /* Firefox */
 	-webkit-transform:rotate(5deg); /* Safari and Chrome */
 	-o-transform:rotate(5deg); /* Opera */
 
-	-webkit-filter: custom(url(shaders/vertex/crumple.vs) mix(url(shaders/fragment/crumple.fs) multiply source-atop), 50 50 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 0.4, strength 0.4, lightIntensity 1) drop-shadow(11.74px 10.54px 4.84px rgba(100, 100, 100, 0.5));;
+	-webkit-filter: custom(url(shaders/vertex/crumple.vs) mix(url(shaders/fragment/crumple.fs) multiply source-atop), 50 50 border-box, transform perspective(1000) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg), amount 0.6, strength 0.4, lightIntensity 1) drop-shadow(11.74px 10.54px 4.84px rgba(100, 100, 100, 0.5));;
+}
+
+#filterspecsection h2 {
+	margin-top: 0px;
 }
