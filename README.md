@@ -85,8 +85,6 @@ css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
 Select that and paste over it:
 
 <code>
-//	css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
-
 css_MixColor = isVisible ? vec4(1.0) : vec4(1.0, 0.0, 0.0, 1.0);
 </code>
 
