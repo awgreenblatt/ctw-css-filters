@@ -36,3 +36,71 @@ Page Curl - Mouse over the image to get it to curl.  Lighting is calculated in t
 FilterLab
 ---------
 
+FilterLab can be used to design the built-in and custom filters you want to apply to content and can be used to develop and share with others your own custom filters. 
+
+
+1. First make sure your animation time (bottom right corner) is set to a reasonable number.  I have found that 3 seconds is a right balance that lets people see the animation, but not too slow.
+
+There are built-in filters such as sepia, drop shadow, hue rotation, etc.
+
+2. Add a hue rotation and a drop shadow from the built-in filter list.
+	Set the drop shadow's color to blue. 
+	Set the hue rotation angle to 0.
+
+Notice that we can copy/paste the resulting CSS (seen under CSS Syntax) in our regular markup.
+
+3. Now click on the little cirle on the right edge of the timeline to advance the timeline to 3s.
+	Set the hue rotation angle to 360. 
+	Set the drop shadow color to blue.
+	Play the animation - notice that the drop shadow stays the same, but everything else has the hue rotation.
+	Show the CSS Animation Syntax
+
+
+That's all well and nice, but let's do something a little more interesting.
+
+4. Delete the 2 built-in filters by clicking on the minus sign in the top-right corner of each filter.
+
+5. Add the curtains filter
+
+6. Set the amount to 0 at time 0 and 1 at 3s and play the animation
+
+7. Add a dissolve filter on top of that and do the same thing with the timing.
+
+But now let's customize the dissolve filter.
+
+8. Delete the dissolve filter.
+
+9. Go to Add Filter->Dissolve and click the 'fork filter' on the right.
+
+You can now click on the various tabs to show the code behind the actual vertex & fragment shaders.
+
+You can also type garbage in to show real-time error handling
+
+10. Go to the fragment shader.  The last line reads:
+
+css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
+
+Select that and paste over it:
+
+//	css_ColorMatrix = isVisible ? mat4(1.0) : mat4(0.0);
+    css_MixColor = isVisible ? vec4(1.0) : vec4(1.0, 0.0, 0.0, 1.0);
+
+If the dissolve filter thinks something should be visible, mix it with white.  Otherwise, mix it with red. very simple.
+
+11. Set the timing on the new dissolve2 filter so that the amount is 0 at 0s and 1 at 3s.  Play the animation.
+
+This is pretty cool.  Let's share it with others.
+
+12.  Click "Publish to Github"
+You can share that gist url with others.  They can import it into their own Filter Lab.
+
+In fact, here's a gist you can import into Filter:
+
+13. Delete the existing curtains & dissolve filters
+
+14. Add Filter -> Import via Gist
+Paste in this link: https://gist.github.com/3813251
+
+So you can see that  FilterLab can be used to generate the CSS markup for built-in and custom filters and used to develop your own filters and share them with others.
+
+
