@@ -88,7 +88,7 @@ Select that and paste over it:
 css_MixColor = isVisible ? vec4(1.0) : vec4(1.0, 0.0, 0.0, 1.0);
 </code>
 
-If the dissolve filter thinks something should be visible, mix it with white.  Otherwise, mix it with red. very simple.
+If the dissolve filter thinks something should be visible, mix it with white.  Otherwise, mix it with red. Very simple.
 
 11. Set the timing on the new dissolve2 filter so that the amount is 0 at 0s and 1 at 3s.  Play the animation.
 
